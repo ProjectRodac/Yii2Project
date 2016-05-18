@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\bootstrap\Modal;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EventSearch */
@@ -20,6 +21,17 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('All Events', ['indexsum'], ['class' => 'btn btn-info']) ?>
     </p>
 
+<?php
+        Modal::begin([
+                'header'=>'<h4>Event</h4>',
+                'id' => 'modal',
+                'size'=>'modal-lg',
+            ]);
+     
+        echo "<div id='modalContent'></div>";
+     
+        Modal::end();
+    ?>
 
 <?= \yii2fullcalendar\yii2fullcalendar::widget(array(
       'events'=> $events,
