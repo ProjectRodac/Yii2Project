@@ -21,7 +21,6 @@ public $globalSearch;
     {
         return [
             [['company_id'], 'integer'],
-            [['company_name', 'company_email', 'company_address', 'company_created_date', 'company_status'], 'safe'],
             [['company_name', 'globalSearch','company_email', 'company_address', 'company_created_date', 'company_status'], 'safe'],
         ];
     }
@@ -58,6 +57,10 @@ public $globalSearch;
             return $dataProvider;
         }
 
+        $query->orFilterWhere(['like', 'company_name', $this->globalSearch])
+            ->orFilterWhere(['like', 'company_email', $this->globalSearch])
+            ->orFilterWhere(['like', 'company_address', $this->globalSearch])
+            ->orFilterWhere(['like', 'company_status', $this->globalSearch]);
 
         return $dataProvider;
     }
