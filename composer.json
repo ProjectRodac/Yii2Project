@@ -23,7 +23,9 @@
         "wbraganca/yii2-dynamicform": "*",
         "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-krajee-base": "*",
-        "kartik-v/yii2-mpdf": "dev-master"
+        "kartik-v/yii2-mpdf": "dev-master",
+        "philippfrenzel/yii2fullcalendar": "*",
+        "kartik-v/yii2-widget-datetimepicker": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
