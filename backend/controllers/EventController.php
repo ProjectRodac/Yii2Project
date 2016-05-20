@@ -93,6 +93,19 @@ class EventController extends Controller
         }
     }
 
+    public function actionCreated()
+    {
+        $model = new Event();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
     /**
      * Updates an existing Event model.
      * If update is successful, the browser will be redirected to the 'view' page.

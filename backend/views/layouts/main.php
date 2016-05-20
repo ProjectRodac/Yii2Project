@@ -46,8 +46,9 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Departments', 'url' => ['/departments/index']];
         $menuItems[] = ['label' => 'Settings', 'url' => ['/settings/companies/index']];
         $menuItems[] = ['label' => 'Emails', 'url' => ['/settings/emails/index']];
-         $menuItems[] = ['label' => 'Po', 'url' => ['/po/index']];
-          $menuItems[] = ['label' => 'Po Items', 'url' => ['/po-item/index']];
+        $menuItems[] = ['label' => 'Po', 'url' => ['/po/index']];
+        $menuItems[] = ['label' => 'Po Items', 'url' => ['/po-item/index']];
+        $menuItems[] = ['label' => 'Events', 'url' => ['/event/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

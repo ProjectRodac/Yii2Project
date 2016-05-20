@@ -55,11 +55,16 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $lkrValue = Yii::$app->MyComponent->currencyConvert('USD','EUR',100);
+        print_r($lkrValue);
+        //odkomentiraj die();
+        //die();
         return $this->render('index');
     }
 
     public function actionLogin()
     {
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
