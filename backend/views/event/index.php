@@ -1,13 +1,10 @@
 <?php
-
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\bootstrap\Modal;
-
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EventSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
 $this->title = 'Events';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

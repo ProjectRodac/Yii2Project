@@ -1,5 +1,4 @@
 <?php
-
 namespace backend\controllers;
 
 use Yii;
@@ -8,7 +7,6 @@ use backend\models\EventSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
 /**
  * EventController implements the CRUD actions for Event model.
  */
@@ -28,7 +26,6 @@ class EventController extends Controller
             ],
         ];
     }
-
     /**
      * Lists all Event models.
      * @return mixed
@@ -45,23 +42,19 @@ class EventController extends Controller
             $event->start = $eve->created_date;
             $tasks[] = $event;    
         }
-
         return $this->render('index', [
             'events' => $tasks,
         ]);
     }
-
     public function actionIndexsum()
      {
         $searchModel = new EventSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('indexsum', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
-
     /**
      * Displays a single Event model.
      * @param integer $id
@@ -73,7 +66,6 @@ class EventController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-
     /**
      * Creates a new Event model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -83,7 +75,6 @@ class EventController extends Controller
     {
         $model = new Event();
         $model->created_date = $date;
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
@@ -92,11 +83,9 @@ class EventController extends Controller
             ]);
         }
     }
-
     public function actionCreated()
     {
         $model = new Event();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
@@ -105,7 +94,6 @@ class EventController extends Controller
             ]);
         }
     }
-
     /**
      * Updates an existing Event model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -115,7 +103,6 @@ class EventController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -124,7 +111,6 @@ class EventController extends Controller
             ]);
         }
     }
-
     /**
      * Deletes an existing Event model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -134,10 +120,8 @@ class EventController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
-
     /**
      * Finds the Event model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
